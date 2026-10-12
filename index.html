@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Philip Edward — Product Designer & AI-Native Developer</title>
+<meta name="description" content="Philip Edward designs and builds digital products using thoughtful UX and modern AI.">
+<meta property="og:title" content="Philip Edward — Product Designer & AI-Native Developer">
+<meta property="og:description" content="I design and build digital products using thoughtful UX and modern AI.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0D0D0E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#work">Skip to content</a>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top" id="logo"></a>
+  <nav aria-label="Primary"><ul id="nav"></ul></nav>
+  <a class="btn solid" href="#contact">Contact</a>
+  <button class="menu btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+</div></header>
+<main id="top">
+<section class="hero"><div class="wrap grid2">
+  <div class="rise">
+    <span class="chip" id="role"></span>
+    <h1>Philip Edward</h1>
+    <p style="font-size:1.25rem;margin-top:1.2rem" id="tagline"></p>
+    <p class="mute" id="intro"></p>
+    <div class="ctas"><a class="btn solid" href="#contact" id="cta2"></a><a class="btn" href="#work">View my work</a></div>
+    <div class="stats" id="stats"></div>
+  </div>
+  <div class="term rise" style="animation-delay:.12s" aria-label="Illustrative: a design spec next to its code">
+    <header><i></i><i></i><i></i><span class="mono">design-to-build</span><em class="mono">illustrative</em></header>
+    <div class="blk"><div class="mono mute">UX SPEC</div>
+      <div class="fld" style="grid-template-columns:1fr"><div><small>Component</small>Transfer form</div></div>
+      <div class="fld"><div><small>State</small>Default, error, success</div><div><small>Hierarchy</small>One primary action</div></div></div>
+    <div class="blk"><div class="mono mute">PYTHON</div>
+<pre><span class="c"># the same rule, written as code</span>
+<span class="k">def</span> can_submit(amount, balance):
+    <span class="k">return</span> 0 &lt; amount &lt;= balance</pre></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="eyebrow accent">The core narrative</div>
+  <h2>Design → Think → Build.</h2>
+  <p class="mute" style="margin-top:1rem" id="narr"></p>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <div class="head"><div><div class="eyebrow">Index // 01</div><h2>Selected Work</h2></div>
+    <div class="tabs" id="tabs" role="group" aria-label="Filter projects"></div></div>
+  <div class="cards" id="cards"></div>
+  <p class="mono mute" style="margin-top:1.5rem">Cards marked "placeholder" are empty slots. Replace them in data.js.</p>
+</div></section>
+
+<section id="design"><div class="wrap">
+  <div class="eyebrow">Methodology // 02</div>
+  <h2 style="max-width:16ch">Designing experiences people understand.</h2>
+  <p class="mute" style="margin-top:1.2rem" id="dIntro"></p>
+  <div class="boxes" id="principles" style="margin:2rem 0"></div>
+  <div class="eyebrow" style="margin-top:3rem">Case study structure // <span id="csTitle"></span></div>
+  <div class="steps" id="steps"></div>
+  <div class="eyebrow" style="margin-top:3rem">Screens // full flow</div>
+  <div class="gallery" id="gallery" tabindex="0" role="region" aria-label="App screens, scroll sideways"></div>
+</div></section>
+
+<section id="build"><div class="wrap">
+  <div class="eyebrow">Engineering // 03</div>
+  <h2>Building with AI.</h2>
+  <p class="mute" style="margin:1.2rem 0 2.5rem" id="bIntro"></p>
+  <div id="builds"></div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <div class="eyebrow accent">The bridge</div>
+  <h2 style="max-width:16ch;margin-bottom:2rem">Why Design × Build matters</h2>
+  <div class="boxes" id="bridge"></div>
+</div></section>
+
+<section id="about"><div class="wrap grid2">
+  <div><div class="eyebrow">About // 04</div><h2>Crafting products from both sides of the screen.</h2>
+    <div class="photo" style="margin-top:2rem" id="photo">Add your photo</div></div>
+  <div id="aboutText"></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">Arsenal // 05</div><h2 style="margin-bottom:2rem">Toolkit &amp; Capabilities</h2>
+  <div class="kit" id="kit"></div>
+</div></section>
+
+<section id="contact"><div class="wrap grid2">
+  <div><div class="eyebrow">Contact // 06</div><h2>Have an idea worth building?</h2>
+    <p class="mute" style="margin-top:1.2rem" id="cText"></p>
+    <div class="contactlinks" id="clinks"></div></div>
+  <form id="form">
+    <div class="eyebrow" style="margin:0">Project intent</div>
+    <div class="intent" id="intent"></div>
+    <label>Your name<input name="n" required placeholder="Your name" autocomplete="name"></label>
+    <label>Email address<input name="e" type="email" required placeholder="you@company.com" autocomplete="email"></label>
+    <label>Message or project brief<textarea name="m" required placeholder="Tell me what you are trying to design or build..."></textarea></label>
+    <button class="btn solid" type="submit">Send message</button>
+  </form>
+</div></section>
+</main>
+<footer><div class="wrap">
+  <div>Philip Edward // Product Designer &amp; AI-Native Developer<br><span id="yr"></span></div>
+  <div id="foot"></div>
+</div></footer>
+<dialog id="dlg" aria-labelledby="dt"><div class="dlg" id="dbody"></div></dialog>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
