@@ -18,11 +18,11 @@ const PROFILE = {
   tagline: "I design and build digital products using thoughtful UX and modern AI.",
   intro: "I combine product design, user experience and AI-powered development to turn ideas into useful digital products, from the first sketch to working software.",
   navCta: "Let's work together",
-  email: "hello@your-email.com",           // placeholder: replace
+  email: "edwardphill37@gmail.com",           // placeholder: replace
   socials: [
-    { label: "LinkedIn", url: "https://linkedin.com/in/your-handle" },  // placeholder
-    { label: "X",        url: "https://x.com/your-handle" },            // placeholder
-    { label: "GitHub",   url: "https://github.com/your-handle" }        // placeholder
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/philip-edward-b07664406" },  // placeholder
+    { label: "X",        url: "https://x.com/PhilipChin34368" },            // placeholder
+    { label: "GitHub",   url: "https://github.com/Phil230" }        // placeholder
   ],
   contactText: "If you're a startup, a recruiter or a founder with a product to design, build, or both, send me a note. A few lines about the idea is enough to start.",
   designIntro: "I start with the person using the product, then work toward the simplest interface that gets them there. That means writing out the user's task, setting a clear visual hierarchy, and testing flows before polishing screens.",
@@ -83,7 +83,7 @@ const PROJECTS = [
   { id: "ledger", type: "design", placeholder: false,
     title: "TheDailyLedger Blog Design", category: "Web UI/UX",
     description: "A web design for an editorial blogging site: homepage, article page, search and archive, and about page.",
-    tools: [],                       // add the tools you used, e.g. "Figma"
+    tools: ["Figma"],                       // add the tools you used, e.g. "Figma"
     image: "images/ledger/cover.webp", link: "",
     galleryLayout: "wide",
     gallery: [
@@ -100,7 +100,7 @@ const PROJECTS = [
   { id: "idoma", type: "design", placeholder: false,
     title: "Idoma Translator", category: "Web UI/UX",
     description: "An interface for translating between English and Idoma, with a language switch, side-by-side text panels and a common phrases panel.",
-    tools: [],                       // add the tools you used, e.g. "Figma"
+    tools: ["Figma"],                       // add the tools you used, e.g. "Figma"
     image: "images/idoma/cover.webp", link: "",   // add a live link when you have one
     galleryLayout: "wide",
     gallery: [["images/idoma/translator.webp", "Translator screen"]],
@@ -112,7 +112,7 @@ const PROJECTS = [
   { id: "moniepoint", type: "design", placeholder: false,
     title: "Moniepoint UI Redesign", category: "Mobile & web UI/UX",
     description: "A redesign of the Moniepoint interface focused on clearer flows and hierarchy.",
-    tools: [],                       // add tools, e.g. "Figma"
+    tools: ["Figma"],                       // add tools, e.g. "Figma"
     image: "",                       // add an image URL or data URI
     link: "",                        // add a Behance / Figma / case study URL
     case: { Problem: "Add the problem you identified.", "Research / Thinking": "Add what you looked at and why.",
