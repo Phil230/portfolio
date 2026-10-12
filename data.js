@@ -101,7 +101,7 @@ const PROJECTS = [
     title: "Idoma Translator", category: "Web UI/UX",
     description: "An interface for translating between English and Idoma, with a language switch, side-by-side text panels and a common phrases panel.",
     tools: ["Figma"],                       // add the tools you used, e.g. "Figma"
-    image: "images/idoma/cover.webp", link: "",   // add a live link when you have one
+    image: "images/idoma/cover.webp", link: "https://idomaai.com/",   // add a live link when you have one
     galleryLayout: "wide",
     gallery: [["images/idoma/translator.webp", "Translator screen"]],
     case: { Problem: "Add the problem this tool set out to solve.",
@@ -109,10 +109,22 @@ const PROJECTS = [
             "Design Process": "Add your process: flows, wireframes, iterations.",
             "Final Solution": "A translator interface with an English / Idoma language switch and swap button, side-by-side input and output panels, and a common phrases panel. The design is framed around preserving and celebrating the Idoma language and culture.",
             Outcome: "Add an outcome only if you have real results." } },
+  { id: "elearning", type: "design", placeholder: false,
+    title: "E-Learning Homepage", category: "Mobile UI/UX",
+    description: "A mobile homepage design for an e-learning site: hero, benefits, course listings, testimonials, pricing and FAQ.",
+    tools: ["Figma"],                       // add the tools you used, e.g. "Figma"
+    image: "images/elearning/cover.webp", link: "",
+    galleryLayout: "phone",
+    gallery: [["images/elearning/homepage.webp", "Mobile homepage, full length"]],
+    case: { Problem: "Add the problem this homepage set out to solve.",
+            "Research / Thinking": "Add the research or thinking behind the layout.",
+            "Design Process": "Add your process: structure, wireframes, iterations.",
+            "Final Solution": "A single-page mobile homepage: a hero with two calls to action, a benefits list, course cards showing duration and level, testimonials, monthly and yearly pricing plans, an FAQ and a footer.",
+            Outcome: "Add an outcome only if you have real results." } },
   { id: "moniepoint", type: "design", placeholder: false,
     title: "Moniepoint UI Redesign", category: "Mobile & web UI/UX",
     description: "A redesign of the Moniepoint interface focused on clearer flows and hierarchy.",
-    tools: ["Figma"],                       // add tools, e.g. "Figma"
+    tools: [],                       // add tools, e.g. "Figma"
     image: "",                       // add an image URL or data URI
     link: "",                        // add a Behance / Figma / case study URL
     case: { Problem: "Add the problem you identified.", "Research / Thinking": "Add what you looked at and why.",

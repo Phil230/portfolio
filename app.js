@@ -25,18 +25,27 @@ $("#yr").textContent = "© " + new Date().getFullYear() + " Philip Edward";
 const first = PROJECTS.find(p => p.type === "design" && p.case);
 $("#steps").innerHTML = P.process.map((s,i) => `<div><i>0${i+1}</i><b style="font-weight:500">${esc(s)}</b><p>${esc((first && first.case[s]) || "Add this step.")}</p></div>`).join("");
 
-const figs = (g, wide) => g.map(([src,cap],i) => `<figure><img src="${esc(src)}" alt="${esc(cap)} screen" ${wide ? "" : 'width="393" height="852" '}loading="lazy"><figcaption class="mono">${String(i+1).padStart(2,"0")} ${esc(cap)}</figcaption></figure>`).join("");
-if (first && first.gallery) $("#gallery").innerHTML = figs(first.gallery, first.galleryLayout === "wide");
+const figs = (g, wide, href) => g.map(([src,cap],i) => {
+  const img = `<img src="${esc(src)}" alt="${esc(cap)} screen${href ? " (opens the live site)" : ""}" ${wide ? "" : 'width="393" height="852" '}loading="lazy">`;
+  return `<figure>${href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${img}</a>` : img}<figcaption class="mono">${String(i+1).padStart(2,"0")} ${esc(cap)}${href ? " · open live site ↗" : ""}</figcaption></figure>`;
+}).join("");
+if (first && first.gallery) $("#gallery").innerHTML = figs(first.gallery, !!first.galleryLayout);
 $("#csTitle").textContent = first ? first.title : "";
 
 /* project cards */
 let filter = "all";
-const card = p => `<button class="card" data-id="${p.id}" aria-haspopup="dialog">
+const card = p => {
+  const pic = p.image ? `<img src="${esc(p.image)}" alt="${p.link ? "" : esc(p.title) + " preview"}" loading="lazy">` : `<span>Add preview image</span>`;
+  const shot = p.link
+    ? `<a class="shot" href="${esc(p.link)}" target="_blank" rel="noopener" aria-label="${esc(p.title)}: open the live project in a new tab">${pic}<span class="visit mono">Visit live site ↗</span></a>`
+    : `<div class="shot">${pic}</div>`;
+  return `<article class="card" data-id="${p.id}">
   <div class="top mono"><span>${esc(p.category)}</span><span>${p.placeholder ? "placeholder" : ""}</span></div>
-  <div class="shot">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.title)} preview" loading="lazy">` : `<span>Add preview image</span>`}</div>
+  ${shot}
   <h3>${esc(p.title)}</h3><p>${esc(p.description)}</p>
   ${p.tools.length ? `<div class="tags">${p.tools.map(t => `<span>${esc(t)}</span>`).join("")}</div>` : ""}
-  <span class="go">${p.type === "design" ? "Read case study ↗" : "Quick view ↗"}</span></button>`;
+  <button class="go" type="button" data-id="${p.id}" aria-haspopup="dialog">${p.type === "design" ? "Read case study ↗" : "Quick view ↗"}</button></article>`;
+};
 function draw(){
   $("#cards").innerHTML = PROJECTS.filter(p => filter === "all" || p.type === filter).map(card).join("")
     + `<div class="card add"><div><b>+ Add a new project</b>Copy any item in data.js to add one here.</div></div>`;
@@ -63,7 +72,7 @@ $("#builds").innerHTML = PROJECTS.filter(p => p.type === "build").map(p => `<art
 /* dialog */
 const dlg = $("#dlg");
 document.addEventListener("click", e => {
-  const t = e.target.closest("[data-id]");
+  const t = e.target.closest("a") ? null : e.target.closest("[data-id]");
   if (t) {
     const p = PROJECTS.find(x => x.id === t.dataset.id);
     const rows = p.type === "design"
@@ -72,7 +81,7 @@ document.addEventListener("click", e => {
     $("#dbody").innerHTML = `<button class="btn close" id="x">Close</button><div class="eyebrow">${esc(p.category)}</div>
       <h2 id="dt" style="font-size:2rem">${esc(p.title)}</h2><p class="mute" style="margin-top:1rem">${esc(p.description)}</p>
       <div class="steps">${rows.map(([a,b],i) => `<div><i>0${i+1}</i><b style="font-weight:500">${esc(a)}</b><p>${esc(b)}</p></div>`).join("")}</div>
-      ${p.gallery ? `<div class="gallery${p.galleryLayout === "wide" ? " wide" : ""}">${figs(p.gallery, p.galleryLayout === "wide")}</div>` : ""}
+      ${p.gallery ? `<div class="gallery${p.galleryLayout ? " " + p.galleryLayout : ""}">${figs(p.gallery, !!p.galleryLayout, p.gallery.length === 1 ? p.link : "")}</div>` : ""}
       <div class="ctas">${link(p.link, "View project", "btn solid")}${link(p.github, "GitHub")}</div>`;
     dlg.showModal();
   }
