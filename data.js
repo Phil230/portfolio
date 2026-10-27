@@ -121,14 +121,27 @@ const PROJECTS = [
             "Design Process": "Add your process: structure, wireframes, iterations.",
             "Final Solution": "A single-page mobile homepage: a hero with two calls to action, a benefits list, course cards showing duration and level, testimonials, monthly and yearly pricing plans, an FAQ and a footer.",
             Outcome: "Add an outcome only if you have real results." } },
+  { id: "estate", type: "design", placeholder: false,
+    title: "Real Estate Website Homepage", category: "Web UI/UX",
+    description: "A homepage design for a real estate website: property search, featured listings, city browsing, app promotion and latest news.",
+    tools: ["Figma"],                       // add the tools you used, e.g. "Figma"
+    image: "images/estate/cover.webp", link: "",
+    galleryLayout: "wide",
+    gallery: [["images/estate/homepage.webp", "Homepage, full length"]],
+    case: { Problem: "Add the problem this website set out to solve.",
+            "Research / Thinking": "Add the research or thinking behind the layout.",
+            "Design Process": "Add your process: structure, wireframes, iterations.",
+            "Final Solution": "A desktop homepage with a hero and property search, featured property cards with price and details, an email sign-up band, a recommended-property slider, a city browser, an app promotion banner, a latest-news section and a footer.",
+            Outcome: "Add an outcome only if you have real results." } },
   { id: "moniepoint", type: "design", placeholder: false,
     title: "Moniepoint UI Redesign", category: "Mobile & web UI/UX",
-    description: "A redesign of the Moniepoint interface focused on clearer flows and hierarchy.",
-    tools: [],                       // add tools, e.g. "Figma"
-    image: "",                       // add an image URL or data URI
+    description: "A UI redesign of the Moniepoint mobile app, covering the home screen and the send-money flow.",
+    tools: ["Figma"],                       // add tools, e.g. "Figma"
+    image: "images/moniepoint/cover.webp",                       // add an image URL or data URI
     link: "",                        // add a Behance / Figma / case study URL
+    gallery: [["images/moniepoint/n1.webp", "Home"], ["images/moniepoint/n2.webp", "Send money"]],
     case: { Problem: "Add the problem you identified.", "Research / Thinking": "Add what you looked at and why.",
-            "Design Process": "Add sketches, flows, iterations.", "Final Solution": "Add final screens and key decisions.",
+            "Design Process": "Add sketches, flows, iterations.", "Final Solution": "A redesigned home screen with a balance card, quick actions for sending money, paying bills and buying airtime, a promo banner and recent transactions, and a send-money screen with recent recipients, three transfer options and a tip on finding people by username.",
             Outcome: "Add an outcome only if you have real results. Otherwise explain the design decisions." } },
   { id: "d2", type: "design", placeholder: true, title: "Mobile app design", category: "Mobile UI/UX",
     description: "Placeholder: describe the product, your role and the problem it solved.", tools: [], image: "", link: "", case: null },
