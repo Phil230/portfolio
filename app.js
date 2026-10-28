@@ -40,7 +40,7 @@ const card = p => {
     ? `<a class="shot" href="${esc(p.link)}" target="_blank" rel="noopener" aria-label="${esc(p.title)}: open the live project in a new tab">${pic}<span class="visit mono">Visit live site ↗</span></a>`
     : `<div class="shot">${pic}</div>`;
   return `<article class="card" data-id="${p.id}">
-  <div class="top mono"><span>${esc(p.category)}</span><span>${p.placeholder ? "placeholder" : ""}</span></div>
+  <div class="top mono"><span>${esc(p.category)}</span><span>${p.status ? esc(p.status) : p.placeholder ? "placeholder" : ""}</span></div>
   ${shot}
   <h3>${esc(p.title)}</h3><p>${esc(p.description)}</p>
   ${p.tools.length ? `<div class="tags">${p.tools.map(t => `<span>${esc(t)}</span>`).join("")}</div>` : ""}
@@ -78,7 +78,7 @@ document.addEventListener("click", e => {
     const rows = p.type === "design"
       ? P.process.map(s => [s, (p.case && p.case[s]) || "Add this step of the case study."])
       : [["What I built",p.built],["Why I built it",p.why],["Technology used",p.tools.join(", ") || "Add technologies"],["What I learned",p.learned]];
-    $("#dbody").innerHTML = `<button class="btn close" id="x">Close</button><div class="eyebrow">${esc(p.category)}</div>
+    $("#dbody").innerHTML = `<button class="btn close" id="x">Close</button><div class="eyebrow">${esc(p.category)}${p.status ? " · " + esc(p.status) : ""}</div>
       <h2 id="dt" style="font-size:2rem">${esc(p.title)}</h2><p class="mute" style="margin-top:1rem">${esc(p.description)}</p>
       <div class="steps">${rows.map(([a,b],i) => `<div><i>0${i+1}</i><b style="font-weight:500">${esc(a)}</b><p>${esc(b)}</p></div>`).join("")}</div>
       ${p.gallery ? `<div class="gallery${p.galleryLayout ? " " + p.galleryLayout : ""}">${figs(p.gallery, !!p.galleryLayout, p.gallery.length === 1 ? p.link : "")}</div>` : ""}
