@@ -2,10 +2,12 @@
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const P = PROFILE;
+const hasBuild = PROJECTS.some(p => p.type === "build");
+if (!hasBuild) { const b = document.getElementById("build"); if (b) b.hidden = true; }
 const link = (u, t, cls = "btn") => u ? `<a class="${cls}" href="${esc(u)}" target="_blank" rel="noopener">${t}</a>` : "";
 
 $("#logo").innerHTML = `${esc(P.name.toUpperCase())}<br><span class="mute">// PRODUCT &amp; AI</span>`;
-$("#nav").innerHTML = [["Work","#work"],["Design","#design"],["Build","#build"],["About","#about"],["Contact","#contact"]].map(([l,h]) => `<li><a href="${h}">${l}</a></li>`).join("");
+$("#nav").innerHTML = [["Work","#work"],["Design","#design"],["Build","#build"],["About","#about"],["Contact","#contact"]].filter(([l]) => l !== "Build" || hasBuild).map(([l,h]) => `<li><a href="${h}">${l}</a></li>`).join("");
 $("#role").textContent = P.role; $("#tagline").textContent = P.tagline; $("#intro").textContent = P.intro;
 $("#cta2").textContent = P.navCta;
 $("#stats").innerHTML = P.stats.map(([a,b]) => `<div><b>${esc(a)}</b><span>${esc(b)}</span></div>`).join("");
@@ -47,10 +49,9 @@ const card = p => {
   <button class="go" type="button" data-id="${p.id}" aria-haspopup="dialog">${p.type === "design" ? "Read case study ↗" : "Quick view ↗"}</button></article>`;
 };
 function draw(){
-  $("#cards").innerHTML = PROJECTS.filter(p => filter === "all" || p.type === filter).map(card).join("")
-    + `<div class="card add"><div><b>+ Add a new project</b>Copy any item in data.js to add one here.</div></div>`;
+  $("#cards").innerHTML = PROJECTS.filter(p => filter === "all" || p.type === filter).map(card).join("");
 }
-const tabs = [["all","All projects"],["design","Design (UI/UX)"],["build","Build (AI & web)"]];
+const tabs = [["all","All projects"],["design","Design (UI/UX)"],["build","Build (AI & web)"]].filter(([k]) => k !== "build" || hasBuild);
 $("#tabs").innerHTML = tabs.map(([k,l]) => `<button data-f="${k}" aria-pressed="${k === "all"}">${l}</button>`).join("");
 $("#tabs").addEventListener("click", e => {
   const b = e.target.closest("button"); if (!b) return;
