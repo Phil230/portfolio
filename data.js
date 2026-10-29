@@ -11,7 +11,7 @@ const PROFILE = {
     ["Better decisions","Understanding data, APIs and constraints leads to design choices that can actually ship."]
   ],
   intents: ["Product Design","AI Prototyping","Full-time Role"],
-  photo: "",   // add an image path, e.g. "images/philip.jpg"
+  photo: "images/philip.webp",   // add an image path, e.g. "images/philip.jpg"
 
   name: "Philip Edward",
   role: "Product Designer & AI-Native Developer",
@@ -75,11 +75,7 @@ const PROJECTS = [
       ["images/okada/n17.webp", "Trip details"],
       ["images/okada/n18.webp", "Settings"]
     ],
-    case: { Problem: "Add the problem this app set out to solve.",
-            "Research / Thinking": "Add the research or thinking behind the flow.",
-            "Design Process": "Add your process: flows, wireframes, iterations.",
-            "Final Solution": "A complete rider flow: phone or social sign-up with code verification, a ride request with an editable fare, a choice of drivers with price and arrival time, live trip tracking, cash payment, driver rating, ride history and settings.",
-            Outcome: "Add an outcome only if you have real results." } },
+    case: { "Key decisions": "Riders can raise or lower the fare in ₦50 steps. The driver list shows price, rating and arrival time side by side. Payment is cash, with a clear \"give the driver\" confirmation." } },
   { id: "ledger", type: "design", placeholder: false,
     title: "TheDailyLedger Blog Design", category: "Web UI/UX",
     description: "A web design for an editorial blogging site: homepage, article page, search and archive, and about page.",
@@ -92,11 +88,7 @@ const PROJECTS = [
       ["images/ledger/archive.webp", "Search and archive"],
       ["images/ledger/about.webp", "About page"]
     ],
-    case: { Problem: "Add the problem this blog design set out to solve.",
-            "Research / Thinking": "Add the research or thinking behind the layout.",
-            "Design Process": "Add your process: structure, wireframes, iterations.",
-            "Final Solution": "A four-page editorial design: a homepage with a lead story and a most-read list, an article page with related terms and stories, an archive with category and date filters, and an about page with a contact form.",
-            Outcome: "Add an outcome only if you have real results." } },
+    case: { "Key decisions": "The homepage leads with one main story beside a Most Read list. The article page adds topic context beside the text and related stories below it. The archive lets readers filter by category and date and sort the results." } },
   { id: "idoma", type: "design", placeholder: false,
     title: "Idoma Translator", category: "Web UI/UX",
     description: "An interface for translating between English and Idoma, with a language switch, side-by-side text panels and a common phrases panel.",
@@ -104,11 +96,7 @@ const PROJECTS = [
     image: "images/idoma/cover.webp", link: "https://idomaai.com/",   // add a live link when you have one
     galleryLayout: "wide",
     gallery: [["images/idoma/translator.webp", "Translator screen"]],
-    case: { Problem: "Add the problem this tool set out to solve.",
-            "Research / Thinking": "Add the research or thinking behind the interface.",
-            "Design Process": "Add your process: flows, wireframes, iterations.",
-            "Final Solution": "A translator interface with an English / Idoma language switch and swap button, side-by-side input and output panels, and a common phrases panel. The design is framed around preserving and celebrating the Idoma language and culture.",
-            Outcome: "Add an outcome only if you have real results." } },
+    case: { "Key decisions": "The input panel has a red outline and the result panel a green one, so each side is easy to tell apart. A common phrases panel shows ready-made examples, such as \"thank you\". The live version is at idomaai.com." } },
   { id: "elearning", type: "design", placeholder: false,
     title: "E-Learning Homepage", category: "Mobile UI/UX",
     description: "A mobile homepage design for an e-learning site: hero, benefits, course listings, testimonials, pricing and FAQ.",
@@ -116,11 +104,7 @@ const PROJECTS = [
     image: "images/elearning/cover.webp", link: "",
     galleryLayout: "phone",
     gallery: [["images/elearning/homepage.webp", "Mobile homepage, full length"]],
-    case: { Problem: "Add the problem this homepage set out to solve.",
-            "Research / Thinking": "Add the research or thinking behind the layout.",
-            "Design Process": "Add your process: structure, wireframes, iterations.",
-            "Final Solution": "A single-page mobile homepage: a hero with two calls to action, a benefits list, course cards showing duration and level, testimonials, monthly and yearly pricing plans, an FAQ and a footer.",
-            Outcome: "Add an outcome only if you have real results." } },
+    case: { "Key decisions": "Course cards show duration and level before the button. Pricing has a monthly and yearly switch and a Free versus Pro feature list with ticks and crosses. FAQs open and close with a plus button." } },
   { id: "estate", type: "design", placeholder: false,
     title: "Real Estate Website Homepage", category: "Web UI/UX",
     description: "A homepage design for a real estate website: property search, featured listings, city browsing, app promotion and latest news.",
@@ -128,11 +112,7 @@ const PROJECTS = [
     image: "images/estate/cover.webp", link: "",
     galleryLayout: "wide",
     gallery: [["images/estate/homepage.webp", "Homepage, full length"]],
-    case: { Problem: "Add the problem this website set out to solve.",
-            "Research / Thinking": "Add the research or thinking behind the layout.",
-            "Design Process": "Add your process: structure, wireframes, iterations.",
-            "Final Solution": "A desktop homepage with a hero and property search, featured property cards with price and details, an email sign-up band, a recommended-property slider, a city browser, an app promotion banner, a latest-news section and a footer.",
-            Outcome: "Add an outcome only if you have real results." } },
+    case: { "Key decisions": "The hero puts a property search (type, size and location) first. Listing cards show price, bedrooms, bathrooms and size at a glance. City browsing, a recommended-property slider and an app promo banner follow." } },
   { id: "budget", type: "design", placeholder: false,
     title: "Budget Tracker App", category: "Mobile UI/UX",
     description: "A mobile budget tracker in naira: dashboard, expenses list, quick add, monthly reports and settings, with an app icon.",
@@ -146,11 +126,7 @@ const PROJECTS = [
       ["images/budget/reports.webp", "Monthly reports"],
       ["images/budget/settings.webp", "Settings"]
     ],
-    case: { Problem: "Add the problem this app set out to solve.",
-            "Research / Thinking": "Add the research or thinking behind the flow.",
-            "Design Process": "Add your process: flows, wireframes, iterations.",
-            "Final Solution": "A mobile budget tracker in naira: a home dashboard with the remaining budget and a spending alert, an expenses list grouped by day with filters, a quick-add sheet, monthly reports with a budget-versus-spend bar and category breakdown, and a settings screen.",
-            Outcome: "Add an outcome only if you have real results." } },
+    case: { "Key decisions": "The dashboard shows the remaining budget, a progress bar and a warning at 80%. Quick add takes an amount, category and funding source in one sheet. Reports compare the budget with spending and rank the categories." } },
   { id: "afrometaverse", type: "design", placeholder: false, status: "In progress",
     title: "AfroMetaverse Game UI/UX", category: "Game & Web UI/UX",
     description: "UI/UX design for AfroMetaverse, a game project I am designing as the UI/UX designer. Work in progress: landing page, city explorer, marketplace, job terminal, wallet and profile.",
@@ -165,11 +141,7 @@ const PROJECTS = [
       ["images/afrometaverse/wallet.webp", "MetaNaira wallet and ledger"],
       ["images/afrometaverse/profile.webp", "Citizen profile and account"]
     ],
-    case: { Problem: "Add the problem this game set out to solve.",
-            "Research / Thinking": "Add the research or thinking behind the interface.",
-            "Design Process": "Add your process: flows, wireframes, iterations, and how you work with the team.",
-            "Final Solution": "A dark, gold-accented interface for an African-inspired metaverse: a landing page, a city explorer with district navigation, a marketplace with an asset inspector, a job terminal with escrow milestones, a wallet with a transaction ledger and a citizen profile. The designs are still in progress.",
-            Outcome: "Add an outcome only if you have real results." } },
+    case: { "Key decisions": "A dark interface with one gold accent for primary actions. The same top bar, with balance and Connect Node, appears on every screen. The designs are still in progress.", "My role": "UI/UX designer on the game team." } },
   { id: "moniepoint", type: "design", placeholder: false,
     title: "Moniepoint UI Redesign", category: "Mobile & web UI/UX",
     description: "A UI redesign of the Moniepoint mobile app, covering the home screen and the send-money flow.",
@@ -177,7 +149,5 @@ const PROJECTS = [
     image: "images/moniepoint/cover.webp",                       // add an image URL or data URI
     link: "",                        // add a Behance / Figma / case study URL
     gallery: [["images/moniepoint/n1.webp", "Home"], ["images/moniepoint/n2.webp", "Send money"]],
-    case: { Problem: "Add the problem you identified.", "Research / Thinking": "Add what you looked at and why.",
-            "Design Process": "Add sketches, flows, iterations.", "Final Solution": "A redesigned home screen with a balance card, quick actions for sending money, paying bills and buying airtime, a promo banner and recent transactions, and a send-money screen with recent recipients, three transfer options and a tip on finding people by username.",
-            Outcome: "Add an outcome only if you have real results. Otherwise explain the design decisions." } },
+    case: { "Key decisions": "The home screen opens with the balance and four quick actions: send, bills, airtime and more. Transactions show a status tag such as Success or Processing. Send Money lists recent recipients and three transfer types, with a tip about finding people by @username." } },
 ];

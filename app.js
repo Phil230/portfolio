@@ -2,6 +2,7 @@
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const P = PROFILE;
+const caseRows = p => Object.entries(p.case || {}).filter(([, v]) => v && !/^Add /.test(v));
 const hasBuild = PROJECTS.some(p => p.type === "build");
 if (!hasBuild) { const b = document.getElementById("build"); if (b) b.hidden = true; }
 const link = (u, t, cls = "btn") => u ? `<a class="${cls}" href="${esc(u)}" target="_blank" rel="noopener">${t}</a>` : "";
@@ -25,7 +26,7 @@ $("#yr").textContent = "© " + new Date().getFullYear() + " Philip Edward";
 
 /* design case study steps (first design project) */
 const first = PROJECTS.find(p => p.type === "design" && p.case);
-$("#steps").innerHTML = P.process.map((s,i) => `<div><i>0${i+1}</i><b style="font-weight:500">${esc(s)}</b><p>${esc((first && first.case[s]) || "Add this step.")}</p></div>`).join("");
+$("#steps").innerHTML = (first ? caseRows(first) : []).map(([s,v],i) => `<div><i>0${i+1}</i><b style="font-weight:500">${esc(s)}</b><p>${esc(v)}</p></div>`).join("");
 
 const figs = (g, wide, href) => g.map(([src,cap],i) => {
   const img = `<img src="${esc(src)}" alt="${esc(cap)} screen${href ? " (opens the live site)" : ""}" ${wide ? "" : 'width="393" height="852" '}loading="lazy">`;
@@ -46,7 +47,7 @@ const card = p => {
   ${shot}
   <h3>${esc(p.title)}</h3><p>${esc(p.description)}</p>
   ${p.tools.length ? `<div class="tags">${p.tools.map(t => `<span>${esc(t)}</span>`).join("")}</div>` : ""}
-  <button class="go" type="button" data-id="${p.id}" aria-haspopup="dialog">${p.type === "design" ? "Read case study ↗" : "Quick view ↗"}</button></article>`;
+  <button class="go" type="button" data-id="${p.id}" aria-haspopup="dialog">${p.type === "design" ? (caseRows(p).length ? "Read case study ↗" : "View screens ↗") : "Quick view ↗"}</button></article>`;
 };
 function draw(){
   $("#cards").innerHTML = PROJECTS.filter(p => filter === "all" || p.type === filter).map(card).join("");
@@ -77,7 +78,7 @@ document.addEventListener("click", e => {
   if (t) {
     const p = PROJECTS.find(x => x.id === t.dataset.id);
     const rows = p.type === "design"
-      ? P.process.map(s => [s, (p.case && p.case[s]) || "Add this step of the case study."])
+      ? caseRows(p)
       : [["What I built",p.built],["Why I built it",p.why],["Technology used",p.tools.join(", ") || "Add technologies"],["What I learned",p.learned]];
     $("#dbody").innerHTML = `<button class="btn close" id="x">Close</button><div class="eyebrow">${esc(p.category)}${p.status ? " · " + esc(p.status) : ""}</div>
       <h2 id="dt" style="font-size:2rem">${esc(p.title)}</h2><p class="mute" style="margin-top:1rem">${esc(p.description)}</p>
@@ -110,3 +111,13 @@ const setMenu = open => { navList.classList.toggle("open", open); menuBtn.setAtt
 menuBtn.addEventListener("click", () => setMenu(!navList.classList.contains("open")));
 navList.addEventListener("click", e => { if (e.target.closest("a")) setMenu(false); });
 document.addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
+
+/* hero showcase: real work instead of an illustration */
+const wanted = P.heroProjects || ["okada", "afrometaverse", "budget"];
+let picks = wanted.map(id => PROJECTS.find(p => p.id === id)).filter(Boolean);
+PROJECTS.forEach(p => { if (picks.length < 3 && !picks.includes(p) && p.image) picks.push(p); });
+picks = picks.slice(0, 3);
+$("#showcase").innerHTML = `<div class="show-head mono"><span>selected work</span><a href="#work">all ${PROJECTS.length} projects ↗</a></div>
+<div class="show-grid">${picks.map((p, i) => `<button class="show-item${i === 0 ? " big" : ""}" type="button" data-id="${p.id}" aria-haspopup="dialog" aria-label="Open ${esc(p.title)}">
+  <img src="${esc(p.image)}" alt="" ${i === 0 ? "" : 'loading="lazy"'}>
+  <span class="show-cap"><b>${esc(p.title)}</b><em>${esc(p.category)}</em></span></button>`).join("")}</div>`;
