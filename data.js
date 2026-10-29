@@ -37,9 +37,9 @@ const PROFILE = {
   process: ["Problem", "Research / Thinking", "Design Process", "Final Solution", "Outcome"],
   buildIntro: "I'm growing as an AI-native developer: using modern AI tools to turn product ideas into working software. Because I design first, I build with the interface, the flow and the user in mind.",
   about: [
-    "I started in UI/UX design, where I learned to shape how products look, read and feel to the person using them.",
-    "I'm expanding that into software development and AI, because the best design decisions come from understanding what's underneath the interface: the data, the APIs, the constraints.",
-    "Today I design products and build them myself. I'm curious, I learn by shipping, and I like working close to the problem."
+    "I started designing digital products in 2023, drawn in by a love of design and creativity.",
+    "Since then I have been learning to build what I design, using Python, web development, APIs, Git and GitHub, and AI tools. I designed a live English to Idoma translator and helped build it.",
+    "I am open to roles in product management, frontend, mobile or backend development, where I can connect design decisions to how things are built."
   ],
   toolkit: {
     Design: ["UI/UX Design", "Product Design", "Prototyping", "Design Systems", "Interaction Design"],
@@ -96,7 +96,7 @@ const PROJECTS = [
     image: "images/idoma/cover.webp", link: "https://idomaai.com/",   // add a live link when you have one
     galleryLayout: "wide",
     gallery: [["images/idoma/translator.webp", "Translator screen"]],
-    case: { "Key decisions": "The input panel has a red outline and the result panel a green one, so each side is easy to tell apart. A common phrases panel shows ready-made examples, such as \"thank you\". The live version is at idomaai.com." } },
+    case: { "Key decisions": "The input panel has a red outline and the result panel a green one, so each side is easy to tell apart. A common phrases panel shows ready-made examples, such as \"thank you\". The live version is at idomaai.com.", "My role": "Designed the interface and built part of the live product." } },
   { id: "elearning", type: "design", placeholder: false,
     title: "E-Learning Homepage", category: "Mobile UI/UX",
     description: "A mobile homepage design for an e-learning site: hero, benefits, course listings, testimonials, pricing and FAQ.",
