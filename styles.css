@@ -147,3 +147,5 @@ button.go{background:none;border:0;padding:0;color:inherit;text-align:left;curso
 .show-item:hover .show-cap b,.show-item:focus-visible .show-cap b{color:var(--accent)}
 @media(max-width:480px){.show-cap{flex-direction:column;gap:.15rem}.show-cap em{text-align:left}}
 @media(hover:none){.show-item:hover img{transform:none}}
+.avail{margin:-.2rem 0 1.6rem;color:var(--mute)}
+.avail::before{content:"";display:inline-block;width:.5rem;height:.5rem;border-radius:50%;background:#3ddc97;margin-right:.6rem}

@@ -121,3 +121,14 @@ $("#showcase").innerHTML = `<div class="show-head mono"><span>selected work</spa
 <div class="show-grid">${picks.map((p, i) => `<button class="show-item${i === 0 ? " big" : ""}" type="button" data-id="${p.id}" aria-haspopup="dialog" aria-label="Open ${esc(p.title)}">
   <img src="${esc(p.image)}" alt="" ${i === 0 ? "" : 'loading="lazy"'}>
   <span class="show-cap"><b>${esc(p.title)}</b><em>${esc(p.category)}</em></span></button>`).join("")}</div>`;
+
+/* open-to-roles line and resume link */
+if (P.availability) {
+  $("#avail").hidden = false; $("#avail").textContent = P.availability;
+  $("#cText").insertAdjacentHTML("afterend", `<p class="mono accent" style="margin-top:-.4rem">${esc(P.availability)}</p>`);
+}
+if (P.resume) {
+  const r = `<a class="btn" href="${esc(P.resume)}" target="_blank" rel="noopener">View résumé (PDF) ↗</a>`;
+  $("#aboutText").insertAdjacentHTML("beforeend", `<div class="ctas">${r}</div>`);
+  $("#clinks").insertAdjacentHTML("afterbegin", `<div>${r}</div>`);
+}

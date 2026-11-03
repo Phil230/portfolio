@@ -3,6 +3,8 @@
    Replace placeholder items with your real projects.
    ===================================================== */
 const PROFILE = {
+  availability: "Open to UI/UX and product design roles, and to product management, frontend, mobile or backend development roles.",
+  resume: "resume/Philip-Edward-Resume.pdf",   // after you add your PDF: "resume/Philip-Edward-Resume.pdf"
   stats: [["Design","UI/UX & product"],["Build","Python & web"],["AI","APIs & automation"]],
   narrative: "I understand how products should work and look, and I'm learning to build those products myself using modern software and AI.",
   bridge: [
@@ -75,7 +77,7 @@ const PROJECTS = [
       ["images/okada/n17.webp", "Trip details"],
       ["images/okada/n18.webp", "Settings"]
     ],
-    case: { "Key decisions": "Riders can raise or lower the fare in ₦50 steps. The driver list shows price, rating and arrival time side by side. Payment is cash, with a clear \"give the driver\" confirmation." } },
+    case: { "Key decisions": "Riders can raise or lower the fare in ₦50 steps. The driver list shows price, rating and arrival time side by side. Payment is cash, with a clear \"give the driver\" confirmation.", "My role": "Sole UI/UX designer." } },
   { id: "ledger", type: "design", placeholder: false,
     title: "TheDailyLedger Blog Design", category: "Web UI/UX",
     description: "A web design for an editorial blogging site: homepage, article page, search and archive, and about page.",
@@ -88,7 +90,7 @@ const PROJECTS = [
       ["images/ledger/archive.webp", "Search and archive"],
       ["images/ledger/about.webp", "About page"]
     ],
-    case: { "Key decisions": "The homepage leads with one main story beside a Most Read list. The article page adds topic context beside the text and related stories below it. The archive lets readers filter by category and date and sort the results." } },
+    case: { "Key decisions": "The homepage leads with one main story beside a Most Read list. The article page adds topic context beside the text and related stories below it. The archive lets readers filter by category and date and sort the results.", "My role": "Sole UI/UX designer." } },
   { id: "idoma", type: "design", placeholder: false,
     title: "Idoma Translator", category: "Web UI/UX",
     description: "An interface for translating between English and Idoma, with a language switch, side-by-side text panels and a common phrases panel.",
@@ -96,7 +98,7 @@ const PROJECTS = [
     image: "images/idoma/cover.webp", link: "https://idomaai.com/",   // add a live link when you have one
     galleryLayout: "wide",
     gallery: [["images/idoma/translator.webp", "Translator screen"]],
-    case: { "Key decisions": "The input panel has a red outline and the result panel a green one, so each side is easy to tell apart. A common phrases panel shows ready-made examples, such as \"thank you\". The live version is at idomaai.com.", "My role": "Designed the interface and built part of the live product." } },
+    case: { "Key decisions": "The input panel has a red outline and the result panel a green one, so each side is easy to tell apart. A common phrases panel shows ready-made examples, such as \"thank you\". The live version is at idomaai.com.", "My role": "Designed the interface alone and built part of the live product." } },
   { id: "elearning", type: "design", placeholder: false,
     title: "E-Learning Homepage", category: "Mobile UI/UX",
     description: "A mobile homepage design for an e-learning site: hero, benefits, course listings, testimonials, pricing and FAQ.",
@@ -104,7 +106,7 @@ const PROJECTS = [
     image: "images/elearning/cover.webp", link: "",
     galleryLayout: "phone",
     gallery: [["images/elearning/homepage.webp", "Mobile homepage, full length"]],
-    case: { "Key decisions": "Course cards show duration and level before the button. Pricing has a monthly and yearly switch and a Free versus Pro feature list with ticks and crosses. FAQs open and close with a plus button." } },
+    case: { "Key decisions": "Course cards show duration and level before the button. Pricing has a monthly and yearly switch and a Free versus Pro feature list with ticks and crosses. FAQs open and close with a plus button.", "My role": "Sole UI/UX designer of the homepage." } },
   { id: "estate", type: "design", placeholder: false,
     title: "Real Estate Website Homepage", category: "Web UI/UX",
     description: "A homepage design for a real estate website: property search, featured listings, city browsing, app promotion and latest news.",
@@ -112,7 +114,7 @@ const PROJECTS = [
     image: "images/estate/cover.webp", link: "",
     galleryLayout: "wide",
     gallery: [["images/estate/homepage.webp", "Homepage, full length"]],
-    case: { "Key decisions": "The hero puts a property search (type, size and location) first. Listing cards show price, bedrooms, bathrooms and size at a glance. City browsing, a recommended-property slider and an app promo banner follow." } },
+    case: { "Key decisions": "The hero puts a property search (type, size and location) first. Listing cards show price, bedrooms, bathrooms and size at a glance. City browsing, a recommended-property slider and an app promo banner follow.", "My role": "Sole UI/UX designer of the homepage." } },
   { id: "budget", type: "design", placeholder: false,
     title: "Budget Tracker App", category: "Mobile UI/UX",
     description: "A mobile budget tracker in naira: dashboard, expenses list, quick add, monthly reports and settings, with an app icon.",
@@ -126,7 +128,7 @@ const PROJECTS = [
       ["images/budget/reports.webp", "Monthly reports"],
       ["images/budget/settings.webp", "Settings"]
     ],
-    case: { "Key decisions": "The dashboard shows the remaining budget, a progress bar and a warning at 80%. Quick add takes an amount, category and funding source in one sheet. Reports compare the budget with spending and rank the categories." } },
+    case: { "Key decisions": "The dashboard shows the remaining budget, a progress bar and a warning at 80%. Quick add takes an amount, category and funding source in one sheet. Reports compare the budget with spending and rank the categories.", "My role": "Sole UI/UX designer." } },
   { id: "afrometaverse", type: "design", placeholder: false, status: "In progress",
     title: "AfroMetaverse Game UI/UX", category: "Game & Web UI/UX",
     description: "UI/UX design for AfroMetaverse, a game project I am designing as the UI/UX designer. Work in progress: landing page, city explorer, marketplace, job terminal, wallet and profile.",
@@ -141,7 +143,7 @@ const PROJECTS = [
       ["images/afrometaverse/wallet.webp", "MetaNaira wallet and ledger"],
       ["images/afrometaverse/profile.webp", "Citizen profile and account"]
     ],
-    case: { "Key decisions": "A dark interface with one gold accent for primary actions. The same top bar, with balance and Connect Node, appears on every screen. The designs are still in progress.", "My role": "UI/UX designer on the game team." } },
+    case: { "Key decisions": "A dark interface with one gold accent for primary actions. The same top bar, with balance and Connect Node, appears on every screen. The designs are still in progress.", "My role": "Sole UI/UX designer on the game project." } },
   { id: "moniepoint", type: "design", placeholder: false,
     title: "Moniepoint UI Redesign", category: "Mobile & web UI/UX",
     description: "A UI redesign of the Moniepoint mobile app, covering the home screen and the send-money flow.",
@@ -149,5 +151,5 @@ const PROJECTS = [
     image: "images/moniepoint/cover.webp",                       // add an image URL or data URI
     link: "",                        // add a Behance / Figma / case study URL
     gallery: [["images/moniepoint/n1.webp", "Home"], ["images/moniepoint/n2.webp", "Send money"]],
-    case: { "Key decisions": "The home screen opens with the balance and four quick actions: send, bills, airtime and more. Transactions show a status tag such as Success or Processing. Send Money lists recent recipients and three transfer types, with a tip about finding people by @username." } },
+    case: { "Key decisions": "The home screen opens with the balance and four quick actions: send, bills, airtime and more. Transactions show a status tag such as Success or Processing. Send Money lists recent recipients and three transfer types, with a tip about finding people by @username.", "My role": "Sole UI/UX designer." } },
 ];

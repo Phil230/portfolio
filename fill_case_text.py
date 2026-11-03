@@ -12,6 +12,18 @@ T = {
                    ('My role', 'UI/UX designer on the game team.')],
  'moniepoint': [('Key decisions', 'The home screen opens with the balance and four quick actions: send, bills, airtime and more. Transactions show a status tag such as Success or Processing. Send Money lists recent recipients and three transfer types, with a tip about finding people by @username.')],
 }
+ROLE = {
+ 'okada': 'Sole UI/UX designer.',
+ 'ledger': 'Sole UI/UX designer.',
+ 'idoma': 'Designed the interface alone and built part of the live product.',
+ 'elearning': 'Sole UI/UX designer of the homepage.',
+ 'estate': 'Sole UI/UX designer of the homepage.',
+ 'budget': 'Sole UI/UX designer.',
+ 'afrometaverse': 'Sole UI/UX designer on the game project.',
+ 'moniepoint': 'Sole UI/UX designer.',
+}
+for k in T:
+    T[k] = [r for r in T[k] if r[0] != 'My role'] + [('My role', ROLE[k])]
 s = open('data.js', encoding='utf-8').read()
 done = []
 for pid, rows in T.items():
