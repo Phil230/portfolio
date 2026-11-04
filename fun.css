@@ -1,0 +1,57 @@
+/* fun layer: colour, icons, buttons, motion. Remove the two fun.* lines in index.html to switch it off. */
+:root{--think:#FFB547;--build:#3DDC97}
+.ic{width:1.05em;height:1.05em;vertical-align:-.17em;flex:none}.ic-fig{width:.8em;height:1.15em;vertical-align:-.25em}
+.ico{display:inline-flex;margin-right:.45rem}.ico.c-d{color:var(--accent)!important}.ico.c-t{color:var(--think)!important}.ico.c-b{color:var(--build)!important}
+.stats .ico,.kit h3 .ico{font-size:1.15rem;font-family:var(--sans)}
+.ico.cat-mobile{color:var(--accent)}.ico.cat-web{color:var(--think)}.ico.cat-game{color:var(--build)}
+.tags span .ic,.kit li .ic,#clinks .ic,#foot .ic{margin-right:.4rem}
+/* buttons */
+.btn,.tabs button,.intent button,button.go{position:relative;overflow:hidden}
+.btn{transition:transform .18s cubic-bezier(.3,1.7,.5,1),box-shadow .18s,background .2s,color .2s,border-color .2s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--accent);border-color:var(--ink)}
+.btn.solid:hover{background:var(--think);border-color:var(--think);color:#0D0D0E}
+.btn:active{transform:translate(1px,1px) scale(.97);box-shadow:0 0 0 var(--accent)}
+.ctas .btn.solid::after{content:"→";display:inline-block;margin-left:.5rem;transition:transform .2s}
+.ctas .btn.solid:hover::after{transform:translateX(5px)}
+.rip{position:absolute;border-radius:50%;background:currentColor;opacity:.28;transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}
+@keyframes rip{to{transform:scale(4);opacity:0}}
+.nav ul a{position:relative}.nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:var(--think);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.nav ul a:hover::after{transform:scaleX(1)}
+/* hero glow and float */
+.hero{position:relative;overflow:hidden}.hero .wrap{position:relative;z-index:1}
+.hero::before,.hero::after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;filter:blur(90px);opacity:.13;pointer-events:none}
+.hero::before{background:var(--accent);top:-200px;right:-120px;animation:drift 16s ease-in-out infinite alternate}
+.hero::after{background:var(--think);bottom:-260px;left:-180px;animation:drift 20s ease-in-out infinite alternate-reverse}
+@keyframes drift{to{transform:translate(60px,40px) scale(1.15)}}
+.showcase.rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both,float 7s ease-in-out 1s infinite}
+@keyframes float{50%{transform:translateY(-7px)}}
+.avail::before{animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(61,220,151,.6)}100%{box-shadow:0 0 0 9px rgba(61,220,151,0)}}
+.stats b{display:flex;align-items:center}.stats>div:hover .ico{animation:wig .5s}
+@keyframes wig{25%{transform:rotate(-14deg) scale(1.2)}75%{transform:rotate(14deg) scale(1.2)}}
+/* ticker */
+.ticker{border-block:1px solid var(--line);background:var(--panel);overflow:hidden;padding:.85rem 0}
+.tick-track{display:flex;gap:2.6rem;width:max-content;animation:tick 45s linear infinite}.ticker:hover .tick-track{animation-play-state:paused}
+.tick-track span{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.8rem;color:var(--mute);white-space:nowrap}
+.tick-track i{width:.45rem;height:.45rem;border-radius:50%;background:currentColor}
+.tick-track .c-d i{background:var(--accent)}.tick-track .c-b i{background:var(--build)}.tick-track .c-t i{background:var(--think)}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* narrative */
+.nar i{font-style:normal;display:inline-block;color:var(--mute);animation:nudge 1.6s ease-in-out infinite}
+.nar .a{color:var(--accent)}.nar .t{color:var(--think)}.nar .b{color:var(--build)}
+@keyframes nudge{50%{transform:translateX(7px)}}
+/* cards and boxes */
+.card{transition:transform .25s cubic-bezier(.3,1.5,.5,1),border-color .25s}
+.card:hover{transform:translateY(-6px) rotate(-.4deg)}.card:nth-child(even):hover{transform:translateY(-6px) rotate(.4deg)}
+.card[data-cat=mobile]:hover{border-color:var(--accent)}.card[data-cat=web]:hover{border-color:var(--think)}.card[data-cat=game]:hover{border-color:var(--build)}
+.card:hover .ico{animation:wig .5s}
+.top span.live{color:var(--build)}.top span.live::before{content:"";display:inline-block;width:.45rem;height:.45rem;border-radius:50%;background:var(--build);margin-right:.4rem;animation:pulse 2s infinite}
+.boxes>div{transition:transform .25s,background .25s}.boxes>div:hover{background:var(--panel2);transform:translateY(-3px)}
+.boxes>div:nth-child(3n+2) .accent{color:var(--think)}.boxes>div:nth-child(3n) .accent{color:var(--build)}
+.kit>div{border-top:2px solid var(--accent)}.kit>div.g-b{border-top-color:var(--build)}.kit>div.g-t{border-top-color:var(--think)}
+.kit h3{justify-content:flex-start}.kit h3>span:last-child{margin-left:auto}
+.kit li{transition:transform .2s,color .2s}.kit li:hover{transform:translateX(6px);color:var(--ink)}
+/* reveal on scroll */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none}}
